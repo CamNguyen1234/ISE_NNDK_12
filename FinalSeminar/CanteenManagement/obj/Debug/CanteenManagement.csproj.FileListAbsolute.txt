@@ -1,0 +1,13 @@
+E:\source\repos\FinalSeminar\CanteenManagement\obj\Debug\CanteenManagement.csprojAssemblyReference.cache
+E:\source\repos\FinalSeminar\CanteenManagement\obj\Debug\CanteenManagement.Login.resources
+E:\source\repos\FinalSeminar\CanteenManagement\obj\Debug\CanteenManagement.Properties.Resources.resources
+E:\source\repos\FinalSeminar\CanteenManagement\obj\Debug\CanteenManagement.csproj.GenerateResource.cache
+E:\source\repos\FinalSeminar\CanteenManagement\obj\Debug\CanteenManagement.csproj.CoreCompileInputs.cache
+E:\source\repos\FinalSeminar\CanteenManagement\bin\Debug\CanteenManagement.exe.config
+E:\source\repos\FinalSeminar\CanteenManagement\bin\Debug\CanteenManagement.exe
+E:\source\repos\FinalSeminar\CanteenManagement\bin\Debug\CanteenManagement.pdb
+E:\source\repos\FinalSeminar\CanteenManagement\obj\Debug\CanteenManagement.exe
+E:\source\repos\FinalSeminar\CanteenManagement\obj\Debug\CanteenManagement.pdb
+E:\source\repos\FinalSeminar\CanteenManagement\obj\Debug\CanteenManagement.AccountProfile.resources
+E:\source\repos\FinalSeminar\CanteenManagement\obj\Debug\CanteenManagement.TableManagement.resources
+E:\source\repos\FinalSeminar\CanteenManagement\obj\Debug\CanteenManagement.Admin.resources
