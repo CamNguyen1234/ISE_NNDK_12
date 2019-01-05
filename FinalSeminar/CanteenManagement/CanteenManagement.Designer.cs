@@ -1,6 +1,6 @@
 ﻿namespace CanteenManagement
 {
-    partial class TableManagement
+    partial class CanteenManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +39,6 @@
             this.nmDiscount = new System.Windows.Forms.NumericUpDown();
             this.btnDiscount = new System.Windows.Forms.Button();
             this.btnCount = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinCaNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +55,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.lsvBill);
-            this.panel2.Location = new System.Drawing.Point(587, 90);
+            this.panel2.Location = new System.Drawing.Point(12, 88);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(319, 316);
             this.panel2.TabIndex = 1;
@@ -75,7 +74,7 @@
             this.panel3.Controls.Add(this.btnAddFood);
             this.panel3.Controls.Add(this.cbFood);
             this.panel3.Controls.Add(this.cbCategory);
-            this.panel3.Location = new System.Drawing.Point(587, 29);
+            this.panel3.Location = new System.Drawing.Point(12, 27);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(319, 55);
             this.panel3.TabIndex = 2;
@@ -127,7 +126,7 @@
             this.panel4.Controls.Add(this.nmDiscount);
             this.panel4.Controls.Add(this.btnDiscount);
             this.panel4.Controls.Add(this.btnCount);
-            this.panel4.Location = new System.Drawing.Point(587, 409);
+            this.panel4.Location = new System.Drawing.Point(12, 409);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(319, 54);
             this.panel4.TabIndex = 3;
@@ -163,13 +162,6 @@
             this.btnCount.Text = "Thanh toán";
             this.btnCount.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 31);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(569, 432);
-            this.flowLayoutPanel1.TabIndex = 4;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -177,7 +169,7 @@
             this.thôngTinCaNhânToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(914, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(347, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -211,18 +203,17 @@
             this.đăngXuâtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuâtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuâtToolStripMenuItem_Click);
             // 
-            // TableManagement
+            // CanteenManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 475);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(347, 475);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "TableManagement";
+            this.Name = "CanteenManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý Canteen";
             this.panel2.ResumeLayout(false);
@@ -250,7 +241,6 @@
         private System.Windows.Forms.NumericUpDown nmDiscount;
         private System.Windows.Forms.Button btnDiscount;
         private System.Windows.Forms.Button btnCount;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCaNhânToolStripMenuItem;

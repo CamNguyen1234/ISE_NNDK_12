@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CanteenManagement
 {
-    public partial class TableManagement : Form
+    public partial class CanteenManagement : Form
     {
-        public TableManagement()
+        public CanteenManagement()
         {
             InitializeComponent();
         }

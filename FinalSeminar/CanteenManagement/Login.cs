@@ -26,7 +26,7 @@ namespace CanteenManagement
             else
             {
                 MessageBox.Show("Đăng nhập thành công !!!", "Thông báo");
-                TableManagement f = new TableManagement();
+                CanteenManagement f = new CanteenManagement();
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
