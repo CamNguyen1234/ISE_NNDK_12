@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CanteenManagement.DAO;
+using CanteenManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +12,57 @@ using System.Windows.Forms;
 
 namespace CanteenManagement
 {
-    public partial class AccountProfile : Form
+    public partial class fLogin : Form
     {
-        public AccountProfile()
+        public fLogin()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string userName = txbUserName.Text;
+            string passWord = txbPassWord.Text;
+            if (Login(userName, passWord))
+            {
+                Account loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
+                //TableManagement f = new TableManagement(loginAccount);
+                this.Hide();
+                //f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
+            }
+        }
+
+        bool Login(string userName, string passWord)
+        {
+            return AccountDAO.Instance.Login(userName, passWord);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void fLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fLogin_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
