@@ -1,0 +1,62 @@
+﻿CREATE DATABASE CanteenManagement
+GO
+
+USE CanteenManagement
+GO
+
+-- Food
+-- Bill
+-- BillInfo
+-- Category
+-- Account
+
+CREATE TABLE Account
+(
+	UserName NVARCHAR(100) PRIMARY KEY,
+	DisplayName NVARCHAR(100) NOT NULL,
+	Password NVARCHAR(1000) NOT NULL DEFAULT 0,
+	Type INT NOT NULL,
+)
+GO
+
+CREATE TABLE Category
+(
+	id INT IDENTITY PRIMARY KEY,
+	name NVARCHAR(100) NOT NULL DEFAULT N'Chưa đặt tên',
+)
+GO
+
+CREATE TABLE Food
+(
+	id INT IDENTITY PRIMARY KEY,
+	name NVARCHAR(100) NOT NULL DEFAULT N'Chưa đặt tên',
+	idCategory INT NOT NULL,
+	price FLOAT NOT NULL DEFAULT 0,
+
+	FOREIGN KEY (idCategory) REFERENCES dbo.Category(id),
+)
+GO
+
+CREATE TABLE Bill
+(
+	id INT IDENTITY PRIMARY KEY,
+	DateCheckIn DATE NOT NULL DEFAULT GETDATE(),
+	DateCheckOut DATE,
+	AccountName NVARCHAR(100) NOT NULL,
+
+	FOREIGN KEY (AccountName) REFERENCES dbo.Account(UserName),
+)
+GO
+
+CREATE TABLE BillInfo
+(
+	id INT IDENTITY PRIMARY KEY,
+	idBill INT NOT NULL,
+	idFood INT NOT NULL,
+	count INT NOT NULL DEFAULT 0,
+
+	FOREIGN KEY (idBill) REFERENCES dbo.Bill(id),
+	FOREIGN KEY (idFood) REFERENCES dbo.Food(id),
+)
+GO
+
