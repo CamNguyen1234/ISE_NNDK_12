@@ -12,57 +12,96 @@ using System.Windows.Forms;
 
 namespace CanteenManagement
 {
-    public partial class fLogin : Form
+    public partial class AccountProfile : Form
     {
-        public fLogin()
+        private Account loginAccount;
+
+        public Account LoginAccount
+        {
+            get { return loginAccount; }
+            set { loginAccount = value; ChangeAccount(loginAccount); }
+        }
+        public AccountProfile(Account acc)
         {
             InitializeComponent();
+
+            LoginAccount = acc;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        void ChangeAccount(Account acc)
         {
+            txbUserName.Text = LoginAccount.UserName;
+            txbDisplayName.Text = LoginAccount.DisplayName;
+        }
+
+        void UpdateAccountInfo()
+        {
+            string displayName = txbDisplayName.Text;
+            string password = txbPassWord.Text;
+            string newpass = txbNewPassWord.Text;
+            string reenterPass = txbReEnter.Text;
             string userName = txbUserName.Text;
-            string passWord = txbPassWord.Text;
-            if (Login(userName, passWord))
+
+            if (!newpass.Equals(reenterPass))
             {
-                Account loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
-                //TableManagement f = new TableManagement(loginAccount);
-                this.Hide();
-                //f.ShowDialog();
-                this.Show();
+                MessageBox.Show("Vui lòng nhập lại mật khẩu đúng với mật khẩu mới!");
             }
             else
             {
-                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
+                if (AccountDAO.Instance.UpdateAccount(userName, displayName, password, newpass))
+                {
+                    MessageBox.Show("Cập nhật thành công");
+                    if (updateAccount != null)
+                        updateAccount(this, new AccountEvent(AccountDAO.Instance.GetAccountByUserName(userName)));
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng điền đúng mật khấu");
+                }
             }
         }
 
-        bool Login(string userName, string passWord)
+        private event EventHandler<AccountEvent> updateAccount;
+        public event EventHandler<AccountEvent> UpdateAccount
         {
-            return AccountDAO.Instance.Login(userName, passWord);
+            add { updateAccount += value; }
+            remove { updateAccount -= value; }
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void btnExti_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
-        private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
+            UpdateAccountInfo();
         }
 
-        private void fLogin_Load(object sender, EventArgs e)
+        private void fAccountProfile_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void fLogin_Load_1(object sender, EventArgs e)
+        private void AccountProfile_Load(object sender, EventArgs e)
         {
 
+        }
+    }
+
+    public class AccountEvent : EventArgs
+    {
+        private Account acc;
+
+        public Account Acc
+        {
+            get { return acc; }
+            set { acc = value; }
+        }
+
+        public AccountEvent(Account acc)
+        {
+            this.Acc = acc;
         }
     }
 }

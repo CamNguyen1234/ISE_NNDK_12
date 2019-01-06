@@ -24,8 +24,8 @@ namespace CanteenManagement
 
         private void thôngTinCaNhânToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AccountProfile f = new AccountProfile();
-            f.ShowDialog();
+            //AccountProfile f = new AccountProfile();
+            //f.ShowDialog();
         }
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)

@@ -46,7 +46,11 @@ namespace CanteenManagement
             }
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void fLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void fLogin_Load1(object sender, EventArgs e)
         {
 
         }

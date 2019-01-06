@@ -1,6 +1,6 @@
 ﻿namespace CanteenManagement
 {
-    partial class fLogin
+    partial class AccountProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -205,7 +205,7 @@
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             // 
-            // fLogin
+            // AccountProfile
             // 
             this.AcceptButton = this.btnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,10 +219,10 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Name = "fLogin";
+            this.Name = "AccountProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin cá nhân";
-            this.Load += new System.EventHandler(this.fLogin_Load_1);
+            this.Load += new System.EventHandler(this.AccountProfile_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
