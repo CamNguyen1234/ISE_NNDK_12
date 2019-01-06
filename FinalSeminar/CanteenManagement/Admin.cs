@@ -313,10 +313,10 @@ namespace CanteenManagement
 
         private void fAdmin_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'QuanLyQuanCafeDataSet2.USP_GetListBillByDateForReport' table. You can move, or remove it, as needed.
-            //this.USP_GetListBillByDateForReportTableAdapter.Fill(this.QuanLyQuanCafeDataSet2.USP_GetListBillByDateForReport, dtpkFromDate.Value, dtpkToDate.Value);
+            //TODO: This line of code loads data into the 'QuanLyQuanCafeDataSet2.USP_GetListBillByDateForReport' table.You can move, or remove it, as needed.
+            //this.USP_GetListBillByDateForReportTableAdapter.Fill(this.CanteenManagement.USP_GetListBillByDateForReport, dtpkFromDate.Value, dtpkToDate.Value);
 
-
+            //this.rpViewer.RefreshReport();
         }
 
         private void tpAccount_Click(object sender, EventArgs e)

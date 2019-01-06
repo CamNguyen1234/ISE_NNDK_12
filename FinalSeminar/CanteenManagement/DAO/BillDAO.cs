@@ -26,9 +26,9 @@ namespace CanteenManagement.DAO
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public int GetUncheckBillIDByTableID(int id)
+        public int GetUncheckBillIDByAccountUserName(string AccountUserName)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Bill WHERE idTable = " + id + " AND status = 0");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Bill WHERE AccountUserName = " + AccountUserName);
 
             if (data.Rows.Count > 0)
             {
@@ -41,12 +41,12 @@ namespace CanteenManagement.DAO
 
         public void CheckOut(int id, int discount, float totalPrice)
         {
-            string query = "UPDATE dbo.Bill SET dateCheckOut = GETDATE(), status = 1, " + "discount = " + discount + ", totalPrice = " + totalPrice + " WHERE id = " + id;
+            string query = "UPDATE dbo.Bill SET dateCheckOut = GETDATE(), " + "discount = " + discount + ", totalPrice = " + totalPrice + " WHERE id = " + id;
             DataProvider.Instance.ExecuteNonQuery(query);
         }
-        public void InsertBill(int id)
+        public void InsertBill(string AccountUserName)
         {
-            DataProvider.Instance.ExecuteNonQuery("exec USP_InsertBill @idTable", new object[] { id });
+            DataProvider.Instance.ExecuteNonQuery("exec USP_InsertBill @accountUserName", new object[] { AccountUserName });
         }
 
         public DataTable GetBillListByDate(DateTime checkIn, DateTime checkOut)

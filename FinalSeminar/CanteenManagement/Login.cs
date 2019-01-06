@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CanteenManagement.DAO;
+using CanteenManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,8 +27,9 @@ namespace CanteenManagement
             }
             else
             {
+                Account loginAccount = AccountDAO.Instance.GetAccountByUserName(txbUserName.Text);
                 MessageBox.Show("Đăng nhập thành công !!!", "Thông báo");
-                CanteenManagement f = new CanteenManagement();
+                CanteenManager f = new CanteenManager(loginAccount);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

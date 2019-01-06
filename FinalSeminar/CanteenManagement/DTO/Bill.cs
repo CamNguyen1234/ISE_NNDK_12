@@ -9,12 +9,12 @@ namespace CanteenManagement.DTO
 {
     public class Bill
     {
-        public Bill(int id, DateTime? dateCheckin, DateTime? dateCheckOut, int status, int discount = 0)
+        public Bill(int id, DateTime? dateCheckin, DateTime? dateCheckOut, string accountUserName, int discount = 0)
         {
             this.ID = id;
             this.DateCheckIn = dateCheckin;
             this.DateCheckOut = dateCheckOut;
-            this.Status = status;
+            this.AccountUserName = accountUserName;
             this.Discount = discount;
         }
 
@@ -26,8 +26,6 @@ namespace CanteenManagement.DTO
             var dateCheckOutTemp = row["dateCheckOut"];
             if (dateCheckOutTemp.ToString() != "")
                 this.DateCheckOut = (DateTime?)dateCheckOutTemp;
-
-            this.Status = (int)row["status"];
 
             if (row["discount"].ToString() != "")
                 this.Discount = (int)row["discount"];
@@ -41,12 +39,10 @@ namespace CanteenManagement.DTO
             set { discount = value; }
         }
 
-        private int status;
-
-        public int Status
+        public string AccountUserName
         {
-            get { return status; }
-            set { status = value; }
+            get { return AccountUserName; }
+            set { AccountUserName = value; }
         }
 
         private DateTime? dateCheckOut;
